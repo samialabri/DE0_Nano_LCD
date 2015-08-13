@@ -1,0 +1,6 @@
+
+State Machine - |LCD|state
+Name state.SECOND state.FIRST state.INIT 
+state.INIT 0 0 0 
+state.FIRST 0 1 1 
+state.SECOND 1 0 1 

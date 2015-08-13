@@ -1,0 +1,15 @@
+C:/Users/Sami/Desktop/LCD_1/tester.v {1 {vlog -work work C:/Users/Sami/Desktop/LCD_1/tester.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tester
+
+Top level modules:
+	tester
+
+} {} {}} C:/Users/Sami/Desktop/LCD_1/teshBench.v {1 {vlog -work work C:/Users/Sami/Desktop/LCD_1/teshBench.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module teshBench
+
+Top level modules:
+	teshBench
+
+} {} {}}

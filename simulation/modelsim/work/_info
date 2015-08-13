@@ -1,0 +1,64 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0
+vLCD
+Z1 IbJEoPz0J=A:jz[znB;g8i1
+Z2 VLTegkEjj^L763acFiRDjf3
+Z3 dC:\Users\Sami\Desktop\LCD_1\simulation\modelsim
+Z4 w1439453125
+Z5 8C:/Users/Sami/Desktop/LCD_1/LCD.v
+Z6 FC:/Users/Sami/Desktop/LCD_1/LCD.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:/Users/Sami/Desktop/LCD_1/LCD.v|
+Z9 o-work work -O0
+Z10 n@l@c@d
+Z11 !s100 mX5oZK@hAWAmo>Jch6?=a3
+Z12 !s108 1439453180.873000
+Z13 !s107 C:/Users/Sami/Desktop/LCD_1/LCD.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vteshBench
+Z14 !s100 :ng=<GCSMXlcR71]Zfb;j0
+Z15 IRXhUd^TXGOD]O@YdMfcSC2
+Z16 V@kh6XkYoF^fEPOLzAIkQO1
+R3
+Z17 w1439432769
+Z18 8C:/Users/Sami/Desktop/LCD_1/teshBench.v
+Z19 FC:/Users/Sami/Desktop/LCD_1/teshBench.v
+L0 3
+R7
+r1
+31
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/Sami/Desktop/LCD_1/teshBench.v|
+R9
+Z21 ntesh@bench
+!i10b 1
+!s85 0
+Z22 !s108 1439453181.013000
+Z23 !s107 C:/Users/Sami/Desktop/LCD_1/teshBench.v|
+!s101 -O0
+vtester
+!i10b 1
+Z24 !s100 Z:O9lH:4z6J_YC2>z_IUM0
+Z25 IleDAfW0[@QkL2I8hbB2^;3
+Z26 VbI5V2Pl0JGEH;>n62acAP0
+R3
+Z27 w1439432724
+Z28 8C:/Users/Sami/Desktop/LCD_1/tester.v
+Z29 FC:/Users/Sami/Desktop/LCD_1/tester.v
+L0 2
+R7
+r1
+!s85 0
+31
+!s108 1439453181.232000
+!s107 C:/Users/Sami/Desktop/LCD_1/tester.v|
+Z30 !s90 -reportprogress|300|-work|work|C:/Users/Sami/Desktop/LCD_1/tester.v|
+!s101 -O0
+R9

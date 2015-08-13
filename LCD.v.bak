@@ -1,0 +1,186 @@
+module lcd(
+	input clk,
+	input [7:0] data_in,
+	
+	output reg [7:0] data_out,
+	output lcd_e,
+	output lcd_r
+);
+
+intiger i = 0;
+intiger j = 0;
+
+reg [2:0] state;
+reg [2:0] init;
+reg [2:0] firstLine;
+reg [2:0] secondLine;
+
+reg [7:0] conf [0:5];
+
+	initial
+		begin 
+		
+			conf[0] <= 8'h38; // to enable 8-bit, 2 lines, 5x7 Dots
+			conf[1] <= 8'h0C; // Display on & Cursor off
+			conf[2] <= 8'h06; // Entry mode
+			conf[3] <= 8'h01; // Clear Display & DDRAM
+			conf[4] <= 8'h80; // Force cursor to 1'st line
+			conf[5] <= 8'hC0; // Force cursor to 2'nd line
+		
+		end 
+
+
+always @ (posedge clk)
+		begin 
+		
+			init		<= 3'b000;
+			firstLine	<= 3'b001;
+			secondLine	<= 3'b010;
+		
+			state <= init; 
+			
+			case (state)
+				begin 
+						
+						
+				//configuarion 		
+					init: 
+						begin 
+							lcd_r <= 1'b0;
+							if (j == 5)
+								begin 
+							
+									j <= 0 ;
+									state <= firstLine;
+								end
+								
+							else 
+								begin 
+							
+									if (i <= 10)
+									begin 
+								
+										i <= i + 1;
+										lcd_e <= 1'b1;
+										data_out <= conf[j];
+								
+									end 
+							
+								else if (i > 10 && i < 20)
+									begin 
+									
+										i <= i + 1;
+										lcd_e <= 0;
+									
+									end 
+							
+								else if (i == 20)
+									begin 
+								
+									j <= j + 1 ;
+									i <= 0; 
+								
+									end 
+							
+							end 
+							
+						end 
+					
+					
+					
+				//wirting to the first line 	
+					firstLine :
+					
+						begin 
+							lcd_r <= 1'b1
+							
+							if (j == 16)
+								begin 
+									j <= 0;
+									lcd_r <= 1'b0;
+									data_out <= conf[5]
+									state <= secondLine;
+								end 
+							
+							else begin 
+								if (i <= 10)
+									begin 
+								
+										i <= i + 1;
+										lcd_e <= 1'b1;
+										data_out <= data_in;
+								
+									end 
+							
+								else if (i > 10 && i < 20)
+									begin 
+									
+										i <= i + 1;
+										lcd_e <= 0;
+									
+									end 
+							
+								else if (i == 20)
+									begin 
+								
+									j <= j + 1 ;
+									i <= 0; 
+								
+									end 
+								
+							
+							end 
+						end 
+						
+					secondLine:
+						
+						begin 
+						
+							lcd_r <= 1'b1
+							
+							if (j == 16)
+								begin 
+									j <= 0;
+									state <= init;
+								end 
+							
+							else begin 
+								if (i <= 10)
+									begin 
+								
+										i <= i + 1;
+										lcd_e <= 1'b1;
+										data_out <= data_in;
+								
+									end 
+							
+								else if (i > 10 && i < 20)
+									begin 
+									
+										i <= i + 1;
+										lcd_e <= 0;
+									
+									end 
+							
+								else if (i == 20)
+									begin 
+								
+									j <= j + 1 ;
+									i <= 0; 
+								
+									end 
+								
+							
+							end
+							
+						
+						end 
+						
+				
+				endcase 
+		
+		end 
+
+		
+
+endmodule
